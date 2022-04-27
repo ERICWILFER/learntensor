@@ -18,7 +18,7 @@ with open("intents.json") as file:
     data = json.load(file)
 
 try:
-    # we_are_training
+    we_are_training
     with open("data.pickle", "rb") as f:
         words, labels, training, output = pickle.load(f)
 except:
@@ -40,7 +40,7 @@ except:
     words = [stemmer.stem(w.lower()) for w in words if w != "?"]
     words = sorted(list(set(words)))
 
-    labels = sorted(labels)
+    # labels = sorted(labels)
 
     training = []
     output = []
@@ -81,7 +81,7 @@ net = tflearn.regression(net)
 model = tflearn.DNN(net)
 
 try:
-    # we_are_training
+    we_are_training
     model.load("model.tflearn")
 except:
     model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
