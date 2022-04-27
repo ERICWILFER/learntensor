@@ -10,12 +10,7 @@
         "Good day",
         "Whats up"
       ],
-      "responses": [
-        "Hello!",
-        "Good to see you again!",
-        "Hi there, how can I help?",
-        "im fine"
-      ],
+      "responses": ["Hello!", "Hi there, how can I help?","nice to meet you","hello there , how can i help"],
       "context_set": ""
     },
     {
@@ -25,55 +20,55 @@
         "what is the Price of Tea",
         "what is the price of Cofee"
       ],
-      "responses": ["9 Rupees"],
+      "responses": ["9 Rupees for Tea and Cofee"],
       "context_set": ""
     },
     {
       "tag": "Vadai",
       "patterns": ["Vadai", "what is the price of vadai"],
-      "responses": ["7 Rupee"],
+      "responses": ["7 Rupee for vadai"],
       "context_set": ""
     },
     {
       "tag": "Idly",
       "patterns": ["Idly", "Price of Idli", "what is the price of Idly"],
-      "responses": ["7 Rupee"],
+      "responses": ["7 Rupee for Idly"],
       "context_set": ""
     },
     {
       "tag": "Pongal",
       "patterns": ["Pongal", "Price of pongal"],
-      "responses": ["20 Rupee"],
+      "responses": ["20 Rupee for pongal"],
       "context_set": ""
     },
     {
       "tag": "Sandwich",
       "patterns": ["Sandwich", "Price of Sandwich"],
-      "responses": ["20 Rupee"],
+      "responses": ["20 Rupee for sandwich"],
       "context_set": ""
     },
     {
       "tag": "Omlete",
       "patterns": ["Omlete", "Price of Omlete"],
-      "responses": ["10 Rupee"],
+      "responses": ["10 Rupee for Omlete"],
       "context_set": ""
     },
     {
       "tag": "Dosai",
       "patterns": ["Dosai", "Price of Dosai"],
-      "responses": ["10 Rupee"],
+      "responses": ["10 Rupee Dosai"],
       "context_set": ""
     },
     {
       "tag": "Bread Omlete",
       "patterns": ["Bread Omlete", "Price of Bread Omlete"],
-      "responses": ["20 Rupee"],
+      "responses": ["20 Rupee for Bread omlete"],
       "context_set": ""
     },
     {
       "tag": "Lunch",
       "patterns": ["Lunch", "Price of Lunch"],
-      "responses": ["40 Rupee"],
+      "responses": ["40 Rupee for lunch"],
       "context_set": ""
     },
     {
@@ -83,51 +78,73 @@
       "context_set": ""
     },
     {
-      "tag": ["Egg Noodles", "price of Egg Noodles"],
-      "patterns": "Egg Noodles",
-      "responses": ["40 Rupee"],
+      "tag": "Egg Noodles",
+      "patterns": ["Egg Noodles","price of Egg Noodles"],
+      "responses": ["40 Rupee for Egg Noodles"],
       "context_set": ""
     },
     {
       "tag": "Poori",
-      "patterns": ["Poori", "Price of poori"],
-      "responses": ["7 Rupee"],
+      "patterns": ["Poori", "Price of poori", "what is the price of Poori"],
+      "responses": ["7 Rupee for Poori"],
       "context_set": ""
     },
     {
       "tag": "Variety rice",
-      "patterns": ["Variety rice", "price of Variety rice"],
-      "responses": ["29 Rupee"],
+      "patterns": [
+        "Variety rice",
+        "price of Variety rice",
+        "what is the price of Variety rice"
+      ],
+      "responses": ["29 Rupee for variety of rice"],
       "context_set": ""
     },
     {
       "tag": "Chapathi",
-      "patterns": ["Chapathi", "price of Chapathi"],
-      "responses": ["10 Rupee"],
+      "patterns": [
+        "Chapathi",
+        "price of Chapathi",
+        "what is the price of chapathi"
+      ],
+      "responses": ["10 Rupee for chapathi"],
       "context_set": ""
     },
     {
       "tag": "Chicken Fry",
-      "patterns": ["Chicken Fry", "price of Chicken Fry"],
-      "responses": ["40 Rupee"],
+      "patterns": [
+        "Chicken Fry",
+        "price of Chicken Fry",
+        "what is the price of chicken Fry"
+      ],
+      "responses": ["40 Rupee for chicken Fry"],
       "context_set": ""
     },
     {
       "tag": "Chicken Chops",
-      "patterns": ["Chicken Chops"],
-      "responses": ["40 Rupee"],
+      "patterns": [
+        "Chicken Chops",
+        "what is the price of Chicken Chops",
+        "price of chicken chops"
+      ],
+      "responses": ["40 Rupee for chicken chops"],
       "context_set": ""
     },
     {
       "tag": "Veg Noodles",
-      "patterns": ["Veg Noodles", "price of veg Noodles"],
-      "responses": ["30 Rupee"],
+      "patterns": [
+        "Veg Noodles",
+        "price of veg Noodles"
+      ],
+      "responses": ["30 Rupee for veg noodles"],
       "context_set": ""
     },
     {
       "tag": "Egg Fried rice",
-      "patterns": ["Egg Fried rice", "price of Egg Fried rice"],
-      "responses": ["40 Rupee"],
+      "patterns": [
+        "Egg Fried rice",
+        "price of Egg Fried rice"
+      ],
+      "responses": ["40 Rupee for Egg Fried rice"],
       "context_set": ""
     },
     {
@@ -135,30 +152,31 @@
       "patterns": [
         "Daily lunch token time",
         "when is the token be give",
+        "when can we get token",
         "token time",
-        "when we get token for lunch",
+        "when we get the token for lunch",
         "when we get token"
       ],
-      "responses": ["at 11:00 AM"],
+      "responses": ["we give lunch token at 11:00 AM"],
       "context_set": ""
     },
-
     {
       "tag": "goodbye",
       "patterns": [
-        "cya",
+        "see ya",
         "See you later",
         "Goodbye",
         "I am Leaving",
-        "Have a Good day"
+        "Have a Good day",
+        "bye"
       ],
       "responses": ["Sad to see you go :(", "Talk to you later", "Goodbye!"],
       "context_set": ""
     },
     {
       "tag": "location",
-      "patterns": ["where is teacher", "where can i find teacher"],
-      "responses": ["at room 206", "she is in main room"],
+      "patterns": ["where is canteen located", "where can i find canteen", "college canteen"],
+      "responses": ["Back of the UCEN college", "Behind College"],
       "context_set": ""
     },
     {
@@ -168,20 +186,21 @@
         "what should I call you",
         "whats your name?"
       ],
-      "responses": ["You can call me Eric.", "I'm Eric!", "I'm Eric."],
+      "responses": ["You can call me CHAT BOT.", "I'm BOT!", "I'm BOT."],
       "context_set": ""
     },
     {
-      "tag": "shop",
+      "tag": "canteen info",
       "patterns": [
-        "Id like to buy something",
+        "what do you have",
         "whats on the menu",
-        "what do you recommend?",
+        "what do you sell",
+        "what to eat",
         "could i get something to eat"
       ],
       "responses": [
-        "We sell chocolate chip cookies for $2!",
-        "Cookies are on the menu!"
+        "We sell Tea/Cofee, Vadai, Idly, Pongal, Sandwich, lunch, chapathi etcetra! ",
+        "we sell food for snack,lunch and breakfast!"
       ],
       "context_set": ""
     },
@@ -190,9 +209,11 @@
       "patterns": [
         "when are you guys open",
         "what are your hours",
-        "hours of operation"
+        "hours of operation",
+        "operating hours",
+        "what are the working hours of canteen"
       ],
-      "responses": ["We are open 7am-4pm Monday-Friday!"],
+      "responses": ["We are open 9am to 5pm College hours!"],
       "context_set": ""
     }
   ]

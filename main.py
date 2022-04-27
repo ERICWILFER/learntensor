@@ -18,7 +18,7 @@ with open("intents.json") as file:
     data = json.load(file)
 
 try:
-    we_are_training
+    # we_are_training
     with open("data.pickle", "rb") as f:
         words, labels, training, output = pickle.load(f)
 except:
@@ -81,7 +81,7 @@ net = tflearn.regression(net)
 model = tflearn.DNN(net)
 
 try:
-    we_are_training
+    # we_are_training
     model.load("model.tflearn")
 except:
     model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
@@ -105,7 +105,7 @@ def bag_of_words(s, words):
 listener = sr.Recognizer()  # object creation for listening
 engine = pyttsx3.init()  # object creation for text to speech
 
-engine.setProperty('rate', 130)  # rate of speaking
+engine.setProperty('rate', 125)  # rate of speaking
 voices = engine.getProperty('voices')
 # 1 for female voice and 0 for male voice
 engine.setProperty('voice', voices[1].id)
