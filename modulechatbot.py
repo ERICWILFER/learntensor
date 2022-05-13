@@ -1,18 +1,16 @@
 import nltk
 from nltk.stem.lancaster import LancasterStemmer
-
-stemmer = LancasterStemmer()
-
 import numpy
 import tflearn
 import tensorflow as tf
-
 import json
 import pickle
 import datetime
 import random
 import pyttsx3
-import speech_recognition as sr
+
+
+stemmer = LancasterStemmer()
 
 with open("intents.json") as file:
     data = json.load(file)
@@ -120,7 +118,6 @@ def response(inp):
 
 
 
-listener = sr.Recognizer()  # object creation for listening
 engine = pyttsx3.init()  # object creation for text to speech
 
 engine.setProperty('rate', 125)  # rate of speaking
@@ -128,86 +125,19 @@ voices = engine.getProperty('voices')
 # 1 for female voice and 0 for male voice
 engine.setProperty('voice', voices[1].id)
 
-# my device index is 1, you have to put your device index
-my_mic = sr.Microphone(device_index=1)
-
-
 def talk(text):
     engine.say(text)
     engine.runAndWait()
 
-# --> control starts from here
-print("1 for chat with bot")
-print("2 for talk with bot")
-tr = input("Enter no: ")
 
-if tr == "1":
-    def chatbot():
-        print("Start chatting with the bot (type quit to stop)!")
-        while True:
-            inp = input("You: ")
-            if inp.lower() == "quit":
-                break
+def chatbot():
+    print("Start chatting with the bot (type quit to stop)!")
+    while True:
+        inp = input("You: ")
+        if inp.lower() == "quit":
+            break
 
-            response(inp)
+        response(inp)
 
-    chatbot()
+# chatbot()
 
-else:
-    # print("not yet prepared")
-    def daytime():  # finding day time right now function
-        times = datetime.datetime.now().strftime('%H')
-
-        if "12" <= times < "05":
-            return 'midnight'
-        elif "05" <= times < "07":
-            return 'dawn'
-        elif "07" <= times < "11":
-            return 'morning'
-        elif "11" <= times < "13":
-            return 'noon'
-        elif "13" <= times < "17":
-            return 'afternoon'
-        elif "17" <= times < "19":
-            return 'dusk'
-        elif "19" <= times < "21":
-            return 'evening'
-        else:
-            return 'night'
-
-
-    greeting_1 = "Hi, how can i help you"
-    greeting_2 = "welcome, i'm at you service"
-    greeting_3 = "good " + daytime() + ", how can i help you"
-    greeting_4 = "hey, how you doing , how can i help you"
-    greeting_5 = "good " + daytime() + ", i hope, i can be helpful"
-    greeting_list = [greeting_1, greeting_2, greeting_3, greeting_4, greeting_5]
-    talk(random.choice(greeting_list))
-
-
-    def take_command():
-        try:
-            command = ""
-            with my_mic as source:
-
-                print('listening...')
-
-                # listener.adjust_for_ambient_noise(source)  # reduce noise but may take more time
-                # take voice input from the microphone
-                audio = listener.listen(source)
-            command = listener.recognize_google(audio)  # to print voice into text
-            command = command.lower()
-            print(command)
-        except Exception as e:
-            print("Exception: " + str(e))
-        return command
-
-    def talkbot():
-        print("say stop to quit")
-        while True:
-            command = take_command()
-            if command == "stop":
-                break
-            response(command)
-
-    talkbot()
